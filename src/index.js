@@ -1,23 +1,16 @@
 import * as PIXI from 'pixi.js';
 
 import './index.scss'; // eslint-disable-line
-
-const load = function load() {
-  const stage = new PIXI.Container();
-  const renderer = PIXI.autoDetectRenderer(256, 256);
-
-  document.body.appendChild(renderer.view);
-
-  const sprite = new PIXI.Sprite(PIXI.loader.resources['assets/images/cat.png'].texture);
-  stage.addChild(sprite);
-
-  renderer.render(stage);
-};
+import start from './modules/start';
 
 const init = function init() {
   PIXI.loader
-    .add('assets/images/cat.png')
-    .load(load);
+    .add('tileset', 'assets/images/tileset.png')
+    .add('cat', 'assets/images/cat.png')
+    .on('progress', (loader, resource) => {
+      console.log(`${loader.progress.toFixed(0)}% - ${resource.url} loaded.`);
+    })
+    .load(start.init);
 };
 
 init();
