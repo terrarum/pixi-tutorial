@@ -9,6 +9,9 @@ const init = function init() {
     // .add('cat', 'assets/images/cat.png')
     .add('assets/images/pixi1.json')
     .on('progress', (loader, resource) => {
+      if (resource.error) {
+        console.log(resource.error);
+      }
       console.log(`${loader.progress.toFixed(0)}% - ${resource.url} loaded.`);
     })
     .load(start.init);
