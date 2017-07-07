@@ -1,6 +1,12 @@
 # Learning Pixi
 Using https://github.com/kittykatattack/learningPixi
 
+# Extras
+
+Particle Effects: https://github.com/pixijs/pixi-particles
+Sound: https://github.com/pixijs/pixi-sound
+
+
 # Running Repo
 
 ## To Build
